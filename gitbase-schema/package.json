@@ -1,0 +1,12 @@
+{
+  "name": "gitbase-schema",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "./node_modules/.bin/cubejs-dev-server"
+  },
+  "dependencies": {
+    "@cubejs-backend/mysql-driver": "^0.9.2",
+    "@cubejs-backend/server": "^0.9.2"
+  }
+}
