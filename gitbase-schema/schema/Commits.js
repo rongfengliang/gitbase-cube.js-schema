@@ -26,7 +26,10 @@ cube(`Commits`, {
       type: `string`,
       primaryKey: true
     },
-    
+    repositoryId2: {
+      sql: `repository_id`,
+      type: `string`,
+    },
     commitAuthorName: {
       sql: `commit_author_name`,
       type: `string`

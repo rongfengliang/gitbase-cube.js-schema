@@ -21,7 +21,10 @@ cube(`Files`, {
       type: `string`,
       primaryKey: true
     },
-    
+    repositoryId2: {
+      sql: `repository_id`,
+      type: `string`,
+    },
     filePath: {
       sql: `file_path`,
       type: `string`

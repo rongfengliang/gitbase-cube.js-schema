@@ -21,7 +21,10 @@ cube(`Refs`, {
       type: `string`,
       primaryKey: true
     },
-    
+    repositoryId2: {
+      sql: `repository_id`,
+      type: `string`,
+    },
     refName: {
       sql: `ref_name`,
       type: `string`

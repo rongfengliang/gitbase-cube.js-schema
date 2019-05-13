@@ -21,7 +21,10 @@ cube(`Remotes`, {
       type: `string`,
       primaryKey: true
     },
-    
+    repositoryId2: {
+      sql: `repository_id`,
+      type: `string`,
+    },
     remoteName: {
       sql: `remote_name`,
       type: `string`

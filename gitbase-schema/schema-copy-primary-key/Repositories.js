@@ -17,6 +17,10 @@ cube(`Repositories`, {
       sql: `repository_id`,
       type: `string`,
       primaryKey: true
-    }
+    },
+    repositoryId2: {
+      sql: `repository_id`,
+      type: `string`,
+    },
   }
 });

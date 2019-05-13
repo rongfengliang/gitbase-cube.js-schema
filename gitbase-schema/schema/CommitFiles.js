@@ -21,7 +21,10 @@ cube(`CommitFiles`, {
       type: `string`,
       primaryKey: true
     },
-    
+    repositoryId2: {
+      sql: `repository_id`,
+      type: `string`,
+    },
     commitHash: {
       sql: `commit_hash`,
       type: `string`

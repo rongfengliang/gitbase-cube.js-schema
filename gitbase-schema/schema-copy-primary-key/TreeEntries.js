@@ -21,7 +21,10 @@ cube(`TreeEntries`, {
       type: `string`,
       primaryKey: true
     },
-    
+    repositoryId2: {
+      sql: `repository_id`,
+      type: `string`,
+    },
     treeEntryName: {
       sql: `tree_entry_name`,
       type: `string`
