@@ -21,7 +21,10 @@ cube(`Blobs`, {
       type: `string`,
       primaryKey: true
     },
-    
+    repositoryId2: {
+      sql: `repository_id`,
+      type: `string`,
+    },
     blobHash: {
       sql: `blob_hash`,
       type: `string`
