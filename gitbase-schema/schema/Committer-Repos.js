@@ -11,7 +11,7 @@ NATURAL JOIN refs
 NATURAL JOIN blobs
 NATURAL JOIN commits
 WHERE ref_name='HEAD'
-GROUP BY repository_id`,
+GROUP BY repository_id,commit_author_email`,
     dimensions: {
       repositoryId: {
         sql: `repository_id`,
