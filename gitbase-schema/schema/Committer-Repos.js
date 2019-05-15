@@ -39,7 +39,7 @@ GROUP BY repository_id`,
         sql: `comments`,
         type: `string`
       },
-      blcodeanks: {
+      code: {
         sql: `code`,
         type: `string`
       }
