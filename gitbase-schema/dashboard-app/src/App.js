@@ -71,6 +71,20 @@ const renderChart = Component => ({ resultSet, error }) =>
   (resultSet && <Component resultSet={resultSet} />) ||
   (error && error.toString()) || <Spin />;
 
+const pieRender = ({ resultSet }) => (
+  <Chart height={400} data={resultSet.chartPivot()} forceFit>
+    <Coord type="theta" radius={0.75} />
+    {resultSet.seriesNames().map(s => (
+      <Axis name={s.key} />
+    ))}
+    <Legend position="right" />
+    <Tooltip />
+    {resultSet.seriesNames().map(s => (
+      <Geom type="intervalStack" position={s.key} color="category" />
+    ))}
+  </Chart>
+);
+
 function App() {
   return (
     <div className="App">
@@ -89,6 +103,28 @@ function App() {
             }}
             cubejsApi={cubejsApi}
             render={renderChart(barRender)}
+          />
+        </DashboardItem>
+        <DashboardItem>
+          <QueryRenderer
+            query={{
+              measures: ["Commits.count"],
+              timeDimensions: [
+                {
+                  dimension: "Commits.committerWhen",
+                  granularity: "hour",
+                  dateRange: "Last year"
+                }
+              ],
+              dimensions: [
+                "Commits.commitAuthorName",
+                "Commits.repositoryId2",
+                "Commits.commitAuthorEmail"
+              ],
+              filters: []
+            }}
+            cubejsApi={cubejsApi}
+            render={renderChart(pieRender)}
           />
         </DashboardItem>
       </Dashboard>
